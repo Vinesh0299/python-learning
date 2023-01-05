@@ -42,6 +42,8 @@ while tries < 3:
                 print("New file 'Test_{}' created".format(file_number))
                 folder.append('Test_{}'.format(file_number))
                 file_number += 1
+            else:
+                print("Invalid command, try again!")
             print("")
 
         break
