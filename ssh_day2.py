@@ -25,7 +25,7 @@ def ssh_terminal(user="root", system="linux"):
     print("Connection Established!! Type 'exit' to break the connection. Type 'help' to list the available commands")
     print("")
     while True:
-        command = input("{}@{}:/# ".format(user, system))
+        command = input("{}@{}: ".format(user, system))
 
         print("")
         if command == "exit":
