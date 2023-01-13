@@ -41,9 +41,7 @@ def remove_file(set_name):
     list_files(set_name)
 
     print("")
-
     value = input("Enter name to delete: ")
-
     print("")
 
     try:
@@ -66,9 +64,7 @@ def create_file(set_name):
     list_files(set_name)
 
     print("")
-
     value = input("Name of file: ")
-
     print("")
 
     if value in set_name:
