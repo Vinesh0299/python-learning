@@ -42,7 +42,7 @@ def create_tcp_synchronous(hostname="localhost", port=8000):
     """
 
     with socketserver.TCPServer((hostname, port), TCPRequestHandler) as server:
-        print("Listening on {}:{}".format(hostname, port))
+        print(f"Listening on {hostname}:{port}")
 
         try:
             server.serve_forever()
@@ -61,7 +61,7 @@ def create_tcp_threaded(hostname="localhost", port=8000):
     """
 
     with ThreadedTCPServer((hostname, port), ThreadedTCPRequestHandler) as server:
-        print("Listening on {}:{}".format(hostname, port))
+        print(f"Listening on {hostname}:{port}")
 
         try:
             server.serve_forever()

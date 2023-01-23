@@ -16,7 +16,7 @@ def get_ipv4address_generator(network):
     try:
         addresses = IPv4Network(network, strict=False)
     except AddressValueError:
-        print("{} is an Invalid IPv4 network".format(network))
+        print(f"{network} is an Invalid IPv4 network")
         raise
     except NetmaskValueError:
         print("Invalid Netmask provided for IPv4 network")
@@ -39,7 +39,7 @@ def get_ipv6address_generator(network):
     try:
         addresses = IPv6Network(network, strict=False)
     except AddressValueError:
-        print("{} is an Invalid IPv6 network".format(network))
+        print(f"{network} is an Invalid IPv6 network")
         raise
     except NetmaskValueError:
         print("Invalid Netmask value provided for IPv6 network")

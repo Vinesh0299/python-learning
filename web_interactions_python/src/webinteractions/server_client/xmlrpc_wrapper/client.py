@@ -12,9 +12,9 @@ def get_server_proxy(hostname="localhost", port=8000, protocol="http"):
             protocol: supported protocol by the hosted server eg. http/https
     """
 
-    server_proxy = client.ServerProxy("{}://{}:{}".format(protocol, hostname, port))
+    server_proxy = client.ServerProxy(f"{protocol}://{hostname}:{port}")
 
-    print("Set the server proxy to {}://{}:{}".format(protocol, hostname, port))
+    print(f"Set the server proxy to {protocol}://{hostname}:{port}")
 
     return server_proxy
 

@@ -34,7 +34,7 @@ def create_xmlrpc_server(
         for func_name in function_map.keys():
             server.register_function(function_map[func_name], name=func_name)
 
-        print("Server listening on {}:{}".format(hostname, port))
+        print(f"Server listening on {hostname}:{port}")
 
         try:
             server.serve_forever()

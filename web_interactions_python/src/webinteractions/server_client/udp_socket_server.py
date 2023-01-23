@@ -41,7 +41,7 @@ def create_udp_synchronous(hostname="localhost", port=8000):
             port: port number the udp server is listening on
     """
     with socketserver.UDPServer((hostname, port), UDPRequestHandler) as server:
-        print("Listening on {}:{}".format(hostname, port))
+        print(f"Listening on {hostname}:{port}")
 
         try:
             server.serve_forever()
@@ -59,7 +59,7 @@ def create_udp_threaded(hostname="localhost", port=8000):
             port: port number the udp server is listening on
     """
     with ThreadedUDPServer((hostname, port), ThreadedUDPRequestHandler) as server:
-        print("Listening on {}:{}".format(hostname, port))
+        print(f"Listening on {hostname}:{port}")
 
         try:
             server.serve_forever()
