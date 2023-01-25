@@ -10,6 +10,7 @@ class HttpTestMethods(unittest.TestCase):
         self.invalid_url = "test.com"
         self.authentication_required_url = "https://officerakuten.sharepoint.com/sites/GlobalPortal/Pages/top.aspx"
         self.open_api_url = "https://catfact.ninja/fact"
+        self.file_url = "https://raw.githubusercontent.com/Vinesh0299/python-learning/main/web_interactions_python/test/setup.py"
 
     def test_empty_url(self):
         """Function tests to check if ValueError is being raised on empty url"""
@@ -34,6 +35,9 @@ class HttpTestMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
             http_request(url=self.open_api_url, data="TEST")
 
+    def test_file_data(self):
+        """Function tests the output of a file url"""
+        self.assertEqual(get_file_data(url=self.file_url), ["from setuptools import setup, find_packages\n", '\n', 'setup(name="webinteractions", packages=find_packages())'])
 
 
 if __name__ == "__main__":
