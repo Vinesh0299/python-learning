@@ -29,12 +29,12 @@ def get_threaded_response(request_data, thread_name, client_address):
 
     if request_data == "ping":
         print("Ping sent back")
-        response = bytes(f"{thread_name}: ping received", "ascii")
+        response = bytes("ping received", "ascii")
     elif request_data == "get":
         print("Received a get request")
-        response = bytes(f"{thread_name}: html corresponding to a webpage", "ascii")
+        response = bytes("html corresponding to a webpage", "ascii")
     elif request_data == "post":
         print("Received a post request")
-        response = bytes(f"{thread_name}: database was updated successfully", "ascii")
+        response = bytes("database was updated successfully", "ascii")
 
     return response

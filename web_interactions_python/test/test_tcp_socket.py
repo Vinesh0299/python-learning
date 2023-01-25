@@ -54,7 +54,7 @@ class TCPSocketTestMethods(unittest.TestCase):
     def test_ping_threaded(self):
         """Testing ping response on threaded server"""
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            sock.connect((self.hostname, self.port))
+            sock.connect((self.hostname, self.port_threaded))
             sock.sendall(bytes("ping", "utf-8"))
 
             received = str(sock.recv(1024), "utf-8")
@@ -64,7 +64,7 @@ class TCPSocketTestMethods(unittest.TestCase):
     def test_get_threaded(self):
         """Testing get response on threaded server"""
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            sock.connect((self.hostname, self.port))
+            sock.connect((self.hostname, self.port_threaded))
             sock.sendall(bytes("get", "utf-8"))
 
             received = str(sock.recv(1024), "utf-8")
@@ -74,7 +74,7 @@ class TCPSocketTestMethods(unittest.TestCase):
     def test_post_threaded(self):
         """Testing post response on threaded server"""
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            sock.connect((self.hostname, self.port))
+            sock.connect((self.hostname, self.port_threaded))
             sock.sendall(bytes("post", "utf-8"))
 
             received = str(sock.recv(1024), "utf-8")
@@ -84,7 +84,7 @@ class TCPSocketTestMethods(unittest.TestCase):
     def test_undefined_threaded(self):
         """Testing response for unhandled request on threaded server"""
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            sock.connect((self.hostname, self.port))
+            sock.connect((self.hostname, self.port_threaded))
             sock.sendall(bytes("test", "utf-8"))
 
             received = str(sock.recv(1024), "utf-8")
