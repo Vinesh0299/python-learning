@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: webinteractions
+Version: 0.0.3
+Summary: A Package created to provide APIs for different web related python libraries like socketserver, xmlrpc etc.
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
+README.md
+

@@ -36,6 +36,9 @@ def http_request(url="", data=None, timeout=30):
             "message": "Invalid request",
             "status": 405
         }
+    except ValueError:
+        print("Invalid url type")
+        raise
 
     if response.getcode() != 200:
         return {
